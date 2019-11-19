@@ -1,0 +1,136 @@
+@import './mixins';
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+  
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.container {
+    max-width: 1500px;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+
+    margin: 0 auto;
+}
+
+.background {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+
+    background-image: url('../images/back-main.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include breakpoint(1100) {
+        background-position: left;
+    }
+}
+
+.footer-background {
+    min-height: 142px;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+
+    background-color: #212121;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register {
+    width: 237px;
+    height: 58px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #fff;
+    text-transform: uppercase;
+    
+    border-radius: 5px;      
+    background-image: -webkit-linear-gradient( 90deg, rgb(188,0,1) 0%, rgb(255,45,110) 100%);
+
+    cursor: pointer;
+
+    &_big {
+        width: 285px;
+        height: 83px;
+
+        font-size: 24px;
+    }
+}
+
+.text {
+    text-transform: uppercase;
+    color: #ffc248;
+    line-height: 0.917;
+
+    &__extra-light {
+        font-weight: 400;
+
+        line-height: 1.183;
+        text-align: left;
+    }
+
+    &_30px {
+        font-size: 30px;
+    }
+
+    &_60px {
+        font-size: 60px;
+    }
+
+    &-orange {
+        color: #be9c16;
+    }
+
+    &-red {
+        color: #f02355;
+    }
+
+    @include breakpoint(500) {
+        &_30px {
+            font-size: 25px;
+        }
+    
+        &_60px {
+            font-size: 40px;
+        }
+    }
+
+    @include breakpoint_h(801) {
+        &_30px {
+            font-size: 25px;
+        }
+    
+        &_60px {
+            font-size: 40px;
+        }
+    }
+}
